@@ -1,0 +1,13 @@
+<h1>{{email}}</h1>
+<div *ngIf="orders.length <= 0">
+    <p>You do have any orders</p>
+</div>
+<div *ngIf="orders.length > 0">
+    <div *ngFor="let order of orders" class="black-border space-around">
+        <p>Order Id: {{order.orderId}}</p>
+        <p>{{order.amount | currency}}</p>
+    </div>
+</div>
+<div class="space-around">
+    <button type="button" [routerLink]="['/']">Back to Ordering</button>
+</div>
